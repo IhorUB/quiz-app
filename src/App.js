@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Container } from "@mui/material";
+import { Box } from "@mui/system";
 
-function App() {
+import Settings from "./pages/Settings";
+import Questions from "./pages/Questions";
+import ResultScreen from "./pages/ResultScreen";
+import namespaces from "./namespaces";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container maxWidth="sm">
+        <Box textAlign="center" mt={5}>
+          <Routes>
+            <Route path="/" element={<Settings />} exact />
+            <Route path={namespaces.questionsRoute} element={<Questions />} />
+            <Route
+              path={namespaces.resultScreenRoute}
+              element={<ResultScreen />}
+            />
+          </Routes>
+        </Box>
+      </Container>
+    </Router>
   );
 }
-
-export default App;
