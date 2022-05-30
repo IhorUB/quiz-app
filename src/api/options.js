@@ -1,7 +1,7 @@
 export const difficultyOptions = [
-  { id: "easy", name: "Easy" },
-  { id: "medium", name: "Medium" },
-  { id: "hard", name: "Hard" },
+  { id: "easy", name: "easy" },
+  { id: "medium", name: "medium" },
+  { id: "hard", name: "hard" },
 ];
 
 export const typeOptions = [

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 import { Button, Typography, CircularProgress } from "@mui/material";
 import { SelectField } from "../components/SelectField";
@@ -10,7 +11,8 @@ const Settings = () => {
   const { response, error, loading } = useAxios({
     url: namespaces.categoriesApiUrl,
   });
-  console.log(response);
+
+  const navigate = useNavigate();
 
   if (loading) {
     return (
@@ -32,6 +34,7 @@ const Settings = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate(namespaces.questionsRoute);
   };
 
   return (

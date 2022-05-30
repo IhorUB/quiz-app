@@ -1,9 +1,14 @@
 import { Box, FormControl, TextField } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { changeAmount } from "../redux/actions";
 
 export const InputField = (props) => {
   const { label, size, type } = props;
+  const dispatch = useDispatch();
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    dispatch(changeAmount(e.target.value));
+  };
 
   return (
     <Box mt={3} width="100%">
