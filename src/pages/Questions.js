@@ -26,7 +26,7 @@ const Questions = () => {
   if (difficulty) {
     apiUrl = apiUrl.concat(`&difficulty=${difficulty}`);
   }
-  if (type) {
+  if (type && type !== "any") {
     apiUrl = apiUrl.concat(`&type=${type}`);
   }
 
@@ -72,7 +72,7 @@ const Questions = () => {
     <Box>
       <Typography variant="h4">Questions {questionIndex + 1}</Typography>
       <Typography mt={5}>
-        {decode(response.results[questionIndex].question)}
+        {decode(response?.results[questionIndex]?.question)}
       </Typography>
       {options.map((data, id) => (
         <Box mt={2} key={id}>
