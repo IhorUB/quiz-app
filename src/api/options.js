@@ -5,7 +5,7 @@ export const difficultyOptions = [
 ];
 
 export const typeOptions = [
-  { id: "any", name: "Any Type" },
-  { id: "multiply", name: "Multiply Choice" },
-  { id: "boolean", name: "True/False" },
+  { id: "any", name: "any" },
+  { id: "multiple", name: "multiple" },
+  { id: "boolean", name: "boolean" },
 ];
